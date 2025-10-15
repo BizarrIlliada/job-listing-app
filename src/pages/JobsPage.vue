@@ -4,10 +4,20 @@
       v-if="areJobsLoaded"
       class="jobs-page__jobs"
     >
+    <RouterLink
+      v-for="job in jobs"
+      :key="job.id"
+      :to="{name: 'job-page', params: { id: job.id }}"
+    >
       <JobCardComponent
-        v-for="job in jobs"
-        :key="job.id"
+        class="jobs-page__job"
+        :title="job.title"
+        :company="job.company"
+        :description="job.description"
+        :location="job.location"
+        :type="job.type"
       />
+    </RouterLink>
     </div>
 
     <UiLoader v-else />
@@ -15,13 +25,13 @@
 </template>
 
 <script setup lang="ts">
-import JobCardComponent from '../components/JobCardComponent.vue';
+import JobCardComponent from '@/components/JobCardComponent.vue';
+import UiLoader from '@/components/ui/UiLoader.vue';
 
 import { onMounted, ref } from 'vue';
 
-import { useJobsApi } from '../api/jobs.api';
-import type { IJob } from '../types';
-import UiLoader from '../components/ui/UiLoader.vue';
+import { useJobsApi } from '@/api/jobs.api';
+import type { IJob } from '@/types';
 
 const { getJobs } = useJobsApi();
 
@@ -39,6 +49,24 @@ onMounted(async () => {
 <style lang="scss">
   .jobs-page {
     height: 100%;
+
+    &__jobs {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, 1fr);
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include phone {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    &__job {
+      height: 100%;
+    }
   }
 </style>
 

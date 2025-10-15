@@ -18,7 +18,7 @@ const { t } = useI18n();
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--gray-10);
+  background-color: var(--green-10);
   box-shadow: var(--block-inner-shadow);
 ;
 

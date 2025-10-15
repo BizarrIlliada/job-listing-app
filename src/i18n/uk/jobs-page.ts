@@ -1,1 +1,55 @@
-export default {}
+export default {
+  // A
+
+  // B
+
+  // C
+
+  // D
+
+  // E
+
+  // F
+
+  // G
+
+  // H
+
+  // I
+
+  // J
+  jobAtCompany: '{ jobTitle } в компанії { companyName }',
+
+  // K
+
+  // L
+
+  // M
+
+  // N
+
+  // O
+
+  // P
+
+  // Q
+
+  // R
+
+  // S
+
+  // T
+
+  // U
+
+  // V
+
+  // W
+
+  // X
+
+  // Y
+
+  // Z
+
+}

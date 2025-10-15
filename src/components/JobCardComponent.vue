@@ -1,13 +1,69 @@
 <template>
   <div class="job-card">
-    Card
+    <h3 class="job-card__title">
+      {{ t('jobsPage.jobAtCompany', { jobTitle: title, companyName: company }) }}
+    </h3>
+
+    <p class="job-card__description">
+      {{ description }}
+    </p>
+
+    <div class="job-card__footer">
+      <span class="job-card__location">
+        {{ location }}
+      </span>
+      <br>
+      <span class="job-card__type">
+        {{ type }}
+      </span>
+    </div>
   </div>
 </template>
 
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+import type { EJobType, IJob } from '@/types';
+
+const { t } = useI18n();
+
+interface Props {
+  title: string;
+  company: string;
+  description: string;
+  location: string;
+  type: EJobType;
+}
+
+defineProps<Props>();
+</script>
+
 <style lang="scss">
 .job-card {
-  height: 120px;
-  background-color: var(--gray-50);
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--orange-10);
+  padding-block: 12px;
+  padding-inline: 16px;
+  border-radius: 4px;
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__description {
+    flex-grow: 1;
+    font-size: 20px;
+    margin-block-end: 24px;
+  }
+
+  &__footer {
+    padding-block-start: 8px;
+    border-block-start: 1px solid var(--gray-100);
+  }
+
+  &__location, &__type {
+    color: var(--gray-75);
+  }
 }
 </style>
