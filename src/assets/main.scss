@@ -1,0 +1,16 @@
+@import '../assets/utils/vars.scss';
+@import '../assets/utils/animations.scss';
+@import '../assets/styles/reusable.scss';
+
+*, *::before, *::after, body * {
+  font-family: Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--gray-100);
+}
+
+html, body, #app {
+  width: 100%;
+  min-height: 100vh;
+}
