@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "TechCorp",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "We're looking for a skilled frontend developer to join our distributed team and help build modern web applications using Vue or React.",
+    "applyLink": "https://example.com/apply/frontend-developer"
+  },
+  {
+    "id": 2,
+    "title": "Backend Engineer",
+    "company": "DataWorks",
+    "location": "Berlin, Germany",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Responsible for designing and maintaining scalable backend systems using Node.js and PostgreSQL.",
+    "applyLink": "https://example.com/apply/backend-engineer"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "company": "PixelForge",
+    "location": "Remote",
+    "type": { "value": "contract", "label": "Contract" },
+    "description": "Work closely with product and engineering to create visually appealing and user-friendly interfaces.",
+    "applyLink": "https://example.com/apply/uiux-designer"
+  },
+  {
+    "id": 4,
+    "title": "DevOps Engineer",
+    "company": "CloudBase",
+    "location": "London, UK",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Maintain CI/CD pipelines, optimize cloud infrastructure, and improve deployment reliability.",
+    "applyLink": "https://example.com/apply/devops-engineer"
+  },
+  {
+    "id": 5,
+    "title": "QA Automation Engineer",
+    "company": "Testify",
+    "location": "Warsaw, Poland",
+    "type": { "value": "hybrid", "label": "Hybrid" },
+    "description": "Develop and maintain automated test suites for web and mobile products.",
+    "applyLink": "https://example.com/apply/qa-automation"
+  },
+  {
+    "id": 6,
+    "title": "Full Stack Developer",
+    "company": "AppSmith",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Work on both frontend and backend systems, contributing to product architecture and design decisions.",
+    "applyLink": "https://example.com/apply/fullstack-developer"
+  },
+  {
+    "id": 7,
+    "title": "Product Manager",
+    "company": "Innovent",
+    "location": "New York, USA",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Define roadmap, prioritize features, and coordinate between engineering and design teams.",
+    "applyLink": "https://example.com/apply/product-manager"
+  },
+  {
+    "id": 8,
+    "title": "Mobile Developer",
+    "company": "SwiftSoft",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Develop high-quality iOS and Android applications using Flutter or React Native.",
+    "applyLink": "https://example.com/apply/mobile-developer"
+  },
+  {
+    "id": 9,
+    "title": "System Administrator",
+    "company": "NetGuard",
+    "location": "Vilnius, Lithuania",
+    "type": { "value": "on-site", "label": "On-site" },
+    "description": "Maintain network systems, monitor performance, and ensure data security.",
+    "applyLink": "https://example.com/apply/system-admin"
+  },
+  {
+    "id": 10,
+    "title": "Marketing Specialist",
+    "company": "Brandify",
+    "location": "Remote",
+    "type": { "value": "part-time", "label": "Part-time" },
+    "description": "Create and manage digital marketing campaigns to increase brand visibility and conversions.",
+    "applyLink": "https://example.com/apply/marketing-specialist"
+  },
+  {
+    "id": 11,
+    "title": "Data Scientist",
+    "company": "InsightAI",
+    "location": "Toronto, Canada",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Analyze datasets, build predictive models, and help optimize decision-making using machine learning.",
+    "applyLink": "https://example.com/apply/data-scientist"
+  },
+  {
+    "id": 12,
+    "title": "Customer Success Manager",
+    "company": "HelpHub",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Work with clients to ensure product satisfaction and success.",
+    "applyLink": "https://example.com/apply/customer-success"
+  },
+  {
+    "id": 13,
+    "title": "Security Engineer",
+    "company": "SecureTech",
+    "location": "Tel Aviv, Israel",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Develop and implement security best practices, conduct audits, and ensure compliance.",
+    "applyLink": "https://example.com/apply/security-engineer"
+  },
+  {
+    "id": 14,
+    "title": "Game Developer",
+    "company": "Playverse",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Create engaging gameplay experiences using Unity or Unreal Engine.",
+    "applyLink": "https://example.com/apply/game-developer"
+  },
+  {
+    "id": 15,
+    "title": "Project Coordinator",
+    "company": "BuildUp",
+    "location": "Prague, Czech Republic",
+    "type": { "value": "hybrid", "label": "Hybrid" },
+    "description": "Assist in planning and coordinating cross-functional project activities and timelines.",
+    "applyLink": "https://example.com/apply/project-coordinator"
+  },
+  {
+    "id": 16,
+    "title": "AI Engineer",
+    "company": "NeuraLabs",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Design and deploy AI-driven solutions for NLP and computer vision applications.",
+    "applyLink": "https://example.com/apply/ai-engineer"
+  },
+  {
+    "id": 17,
+    "title": "Technical Writer",
+    "company": "DocFlow",
+    "location": "Remote",
+    "type": { "value": "contract", "label": "Contract" },
+    "description": "Write and maintain clear technical documentation for APIs and developer tools.",
+    "applyLink": "https://example.com/apply/technical-writer"
+  },
+  {
+    "id": 18,
+    "title": "Graphic Designer",
+    "company": "Designify",
+    "location": "Lviv, Ukraine",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Create visuals, layouts, and assets for digital and print media.",
+    "applyLink": "https://example.com/apply/graphic-designer"
+  },
+  {
+    "id": 19,
+    "title": "Business Analyst",
+    "company": "Planwise",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Collect requirements, create documentation, and help align business goals with product delivery.",
+    "applyLink": "https://example.com/apply/business-analyst"
+  },
+  {
+    "id": 20,
+    "title": "Sales Manager",
+    "company": "TradeHub",
+    "location": "Paris, France",
+    "type": { "value": "hybrid", "label": "Hybrid" },
+    "description": "Drive sales growth through client acquisition and relationship management.",
+    "applyLink": "https://example.com/apply/sales-manager"
+  },
+  {
+    "id": 21,
+    "title": "Content Manager",
+    "company": "WriteIt",
+    "location": "Remote",
+    "type": { "value": "part-time", "label": "Part-time" },
+    "description": "Manage editorial calendars, edit content, and coordinate with freelance writers.",
+    "applyLink": "https://example.com/apply/content-manager"
+  },
+  {
+    "id": 22,
+    "title": "Database Administrator",
+    "company": "DataCore",
+    "location": "Krakow, Poland",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Maintain and optimize SQL and NoSQL databases for performance and reliability.",
+    "applyLink": "https://example.com/apply/database-admin"
+  },
+  {
+    "id": 23,
+    "title": "HR Specialist",
+    "company": "PeopleFirst",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Manage recruitment processes, onboarding, and employee engagement activities.",
+    "applyLink": "https://example.com/apply/hr-specialist"
+  },
+  {
+    "id": 24,
+    "title": "Data Engineer",
+    "company": "Streamlytics",
+    "location": "Amsterdam, Netherlands",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Build and maintain ETL pipelines and ensure data integrity across systems.",
+    "applyLink": "https://example.com/apply/data-engineer"
+  },
+  {
+    "id": 25,
+    "title": "SRE (Site Reliability Engineer)",
+    "company": "UptimeX",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Ensure high availability, scalability, and performance of production systems.",
+    "applyLink": "https://example.com/apply/sre"
+  },
+  {
+    "id": 26,
+    "title": "Game Artist",
+    "company": "Artify Games",
+    "location": "Remote",
+    "type": { "value": "contract", "label": "Contract" },
+    "description": "Create characters, environments, and visual effects for mobile and console games.",
+    "applyLink": "https://example.com/apply/game-artist"
+  },
+  {
+    "id": 27,
+    "title": "SEO Specialist",
+    "company": "Rankly",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Optimize website visibility across search engines through content and technical improvements.",
+    "applyLink": "https://example.com/apply/seo-specialist"
+  },
+  {
+    "id": 28,
+    "title": "Support Engineer",
+    "company": "HelpDeskly",
+    "location": "Lisbon, Portugal",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Assist clients with technical issues, troubleshoot bugs, and provide product guidance.",
+    "applyLink": "https://example.com/apply/support-engineer"
+  },
+  {
+    "id": 29,
+    "title": "Analytics Engineer",
+    "company": "MetricFlow",
+    "location": "Remote",
+    "type": { "value": "full-time", "label": "Full-time" },
+    "description": "Bridge the gap between data engineering and analytics by building scalable data models.",
+    "applyLink": "https://example.com/apply/analytics-engineer"
+  },
+  {
+    "id": 30,
+    "title": "3D Artist",
+    "company": "RenderForge",
+    "location": "Kyiv, Ukraine",
+    "type": { "value": "contract", "label": "Contract" },
+    "description": "Design and render realistic 3D assets for AR/VR projects and product visualizations.",
+    "applyLink": "https://example.com/apply/3d-artist"
+  }
+]

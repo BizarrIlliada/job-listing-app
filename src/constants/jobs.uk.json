@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend-розробник",
+    "company": "TechCorp",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Шукаємо досвідченого фронтенд-розробника до віддаленої команди для створення сучасних вебзастосунків на Vue або React.",
+    "applyLink": "https://example.com/apply/frontend-developer"
+  },
+  {
+    "id": 2,
+    "title": "Backend-інженер",
+    "company": "DataWorks",
+    "location": "Берлін, Німеччина",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Відповідальний за проєктування та підтримку масштабованих бекенд-систем на Node.js і PostgreSQL.",
+    "applyLink": "https://example.com/apply/backend-engineer"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX-дизайнер",
+    "company": "PixelForge",
+    "location": "Віддалено",
+    "type": { "value": "contract", "label": "Контракт" },
+    "description": "Працюй у тісній співпраці з продукт-менеджером та розробниками для створення привабливих і зручних інтерфейсів.",
+    "applyLink": "https://example.com/apply/uiux-designer"
+  },
+  {
+    "id": 4,
+    "title": "DevOps-інженер",
+    "company": "CloudBase",
+    "location": "Лондон, Велика Британія",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Підтримка CI/CD-процесів, оптимізація хмарної інфраструктури та підвищення надійності розгортань.",
+    "applyLink": "https://example.com/apply/devops-engineer"
+  },
+  {
+    "id": 5,
+    "title": "QA-інженер автоматизації",
+    "company": "Testify",
+    "location": "Варшава, Польща",
+    "type": { "value": "hybrid", "label": "Гібрид" },
+    "description": "Розробка та підтримка автоматизованих тестових наборів для веб- і мобільних продуктів.",
+    "applyLink": "https://example.com/apply/qa-automation"
+  },
+  {
+    "id": 6,
+    "title": "Full Stack-розробник",
+    "company": "AppSmith",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Розробка фронтенд- і бекенд-частин продукту, участь у проєктуванні архітектури та технічних рішень.",
+    "applyLink": "https://example.com/apply/fullstack-developer"
+  },
+  {
+    "id": 7,
+    "title": "Продакт-менеджер",
+    "company": "Innovent",
+    "location": "Нью-Йорк, США",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Формування дорожньої карти продукту, пріоритизація функцій і координація між командами дизайну та розробки.",
+    "applyLink": "https://example.com/apply/product-manager"
+  },
+  {
+    "id": 8,
+    "title": "Мобільний розробник",
+    "company": "SwiftSoft",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Розробка високоякісних мобільних застосунків для iOS та Android з використанням Flutter або React Native.",
+    "applyLink": "https://example.com/apply/mobile-developer"
+  },
+  {
+    "id": 9,
+    "title": "Системний адміністратор",
+    "company": "NetGuard",
+    "location": "Вільнюс, Литва",
+    "type": { "value": "on-site", "label": "Офіс" },
+    "description": "Підтримка мережевих систем, моніторинг продуктивності та забезпечення безпеки даних.",
+    "applyLink": "https://example.com/apply/system-admin"
+  },
+  {
+    "id": 10,
+    "title": "Маркетинг-спеціаліст",
+    "company": "Brandify",
+    "location": "Віддалено",
+    "type": { "value": "part-time", "label": "Неповна зайнятість" },
+    "description": "Створення та управління цифровими маркетинговими кампаніями для підвищення впізнаваності бренду та конверсій.",
+    "applyLink": "https://example.com/apply/marketing-specialist"
+  },
+  {
+    "id": 11,
+    "title": "Дата-сайентіст",
+    "company": "InsightAI",
+    "location": "Торонто, Канада",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Аналіз наборів даних, створення моделей прогнозування та оптимізація процесів ухвалення рішень із використанням машинного навчання.",
+    "applyLink": "https://example.com/apply/data-scientist"
+  },
+  {
+    "id": 12,
+    "title": "Менеджер із клієнтського успіху",
+    "company": "HelpHub",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Підтримка клієнтів і забезпечення максимальної задоволеності використанням продукту.",
+    "applyLink": "https://example.com/apply/customer-success"
+  },
+  {
+    "id": 13,
+    "title": "Інженер з безпеки",
+    "company": "SecureTech",
+    "location": "Тель-Авів, Ізраїль",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Розробка та впровадження політик безпеки, проведення аудитів і забезпечення відповідності стандартам.",
+    "applyLink": "https://example.com/apply/security-engineer"
+  },
+  {
+    "id": 14,
+    "title": "Розробник ігор",
+    "company": "Playverse",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Створення цікавих ігрових механік та досвіду на Unity або Unreal Engine.",
+    "applyLink": "https://example.com/apply/game-developer"
+  },
+  {
+    "id": 15,
+    "title": "Координатор проєктів",
+    "company": "BuildUp",
+    "location": "Прага, Чехія",
+    "type": { "value": "hybrid", "label": "Гібрид" },
+    "description": "Допомога в плануванні та координації міжфункціональних активностей і термінів реалізації проєктів.",
+    "applyLink": "https://example.com/apply/project-coordinator"
+  },
+  {
+    "id": 16,
+    "title": "Інженер зі штучного інтелекту",
+    "company": "NeuraLabs",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Розробка та впровадження рішень на базі ШІ для NLP і комп'ютерного зору.",
+    "applyLink": "https://example.com/apply/ai-engineer"
+  },
+  {
+    "id": 17,
+    "title": "Технічний письменник",
+    "company": "DocFlow",
+    "location": "Віддалено",
+    "type": { "value": "contract", "label": "Контракт" },
+    "description": "Створення й підтримка технічної документації для API та інструментів розробників.",
+    "applyLink": "https://example.com/apply/technical-writer"
+  },
+  {
+    "id": 18,
+    "title": "Графічний дизайнер",
+    "company": "Designify",
+    "location": "Львів, Україна",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Створення візуалів, макетів і графічних матеріалів для цифрових і друкованих медіа.",
+    "applyLink": "https://example.com/apply/graphic-designer"
+  },
+  {
+    "id": 19,
+    "title": "Бізнес-аналітик",
+    "company": "Planwise",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Збір вимог, підготовка документації та узгодження бізнес-цілей із процесами розробки.",
+    "applyLink": "https://example.com/apply/business-analyst"
+  },
+  {
+    "id": 20,
+    "title": "Менеджер із продажу",
+    "company": "TradeHub",
+    "location": "Париж, Франція",
+    "type": { "value": "hybrid", "label": "Гібрид" },
+    "description": "Забезпечення зростання продажів через залучення клієнтів і розвиток партнерських відносин.",
+    "applyLink": "https://example.com/apply/sales-manager"
+  },
+  {
+    "id": 21,
+    "title": "Контент-менеджер",
+    "company": "WriteIt",
+    "location": "Віддалено",
+    "type": { "value": "part-time", "label": "Неповна зайнятість" },
+    "description": "Керування контент-планом, редагування текстів і координація роботи з позаштатними авторами.",
+    "applyLink": "https://example.com/apply/content-manager"
+  },
+  {
+    "id": 22,
+    "title": "Адміністратор баз даних",
+    "company": "DataCore",
+    "location": "Краків, Польща",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Підтримка та оптимізація SQL і NoSQL баз даних для підвищення продуктивності та надійності.",
+    "applyLink": "https://example.com/apply/database-admin"
+  },
+  {
+    "id": 23,
+    "title": "HR-спеціаліст",
+    "company": "PeopleFirst",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Організація процесів найму, адаптації нових працівників і підвищення залученості команди.",
+    "applyLink": "https://example.com/apply/hr-specialist"
+  },
+  {
+    "id": 24,
+    "title": "Дата-інженер",
+    "company": "Streamlytics",
+    "location": "Амстердам, Нідерланди",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Розробка та підтримка ETL-конвеєрів, забезпечення якості та цілісності даних.",
+    "applyLink": "https://example.com/apply/data-engineer"
+  },
+  {
+    "id": 25,
+    "title": "SRE (інженер надійності систем)",
+    "company": "UptimeX",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Забезпечення високої доступності, масштабованості та стабільності продакшн-систем.",
+    "applyLink": "https://example.com/apply/sre"
+  },
+  {
+    "id": 26,
+    "title": "Ігровий художник",
+    "company": "Artify Games",
+    "location": "Віддалено",
+    "type": { "value": "contract", "label": "Контракт" },
+    "description": "Створення персонажів, середовищ і візуальних ефектів для мобільних і консольних ігор.",
+    "applyLink": "https://example.com/apply/game-artist"
+  },
+  {
+    "id": 27,
+    "title": "SEO-спеціаліст",
+    "company": "Rankly",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Оптимізація вебсайтів для пошукових систем через контентні та технічні покращення.",
+    "applyLink": "https://example.com/apply/seo-specialist"
+  },
+  {
+    "id": 28,
+    "title": "Інженер підтримки",
+    "company": "HelpDeskly",
+    "location": "Лісабон, Португалія",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Допомога клієнтам у вирішенні технічних проблем і надання консультацій щодо продукту.",
+    "applyLink": "https://example.com/apply/support-engineer"
+  },
+  {
+    "id": 29,
+    "title": "Аналітик даних (Analytics Engineer)",
+    "company": "MetricFlow",
+    "location": "Віддалено",
+    "type": { "value": "full-time", "label": "Повна зайнятість" },
+    "description": "Поєднання інженерії даних і аналітики через створення масштабованих моделей даних.",
+    "applyLink": "https://example.com/apply/analytics-engineer"
+  },
+  {
+    "id": 30,
+    "title": "3D-художник",
+    "company": "RenderForge",
+    "location": "Київ, Україна",
+    "type": { "value": "contract", "label": "Контракт" },
+    "description": "Створення та рендеринг реалістичних 3D-об’єктів для AR/VR-проєктів і візуалізацій продуктів.",
+    "applyLink": "https://example.com/apply/3d-artist"
+  }
+]
