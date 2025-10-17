@@ -1,12 +1,19 @@
 <template>
   <header class="app-header">
-    <h1 class="app-header__title">
-      {{ t('shared.jobListingApp') }}
-    </h1>
+    <div class="container">
+      <RouterLink :to="{ name: 'home-page' }">
+        <h1 class="app-header__title">
+          {{ t('shared.jobListingApp') }}
+        </h1>
+      </RouterLink>
+  
+      <AppLangSelector class="app-header__lang-selector" />
+    </div>
   </header>
 </template>
 
 <script setup lang="ts">
+import AppLangSelector from './AppLangSelector.vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -15,15 +22,21 @@ const { t } = useI18n();
 <style lang="scss">
 .app-header {
   height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--green-10);
   box-shadow: var(--block-inner-shadow);
-;
 
   &__title {
+    transition: transform .3s ease;
 
+    &:hover {
+      transform: scale(1.01);
+    }
   }
+}
+
+.app-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

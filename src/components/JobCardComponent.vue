@@ -14,7 +14,7 @@
       </span>
       <br>
       <span class="job-card__type">
-        {{ type }}
+        {{ type.label }}
       </span>
     </div>
   </div>
@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import type { EJobType, IJob } from '@/types';
+import type { EJobTypeValue, IJob } from '@/types';
 
 const { t } = useI18n();
 
@@ -31,7 +31,10 @@ interface Props {
   company: string;
   description: string;
   location: string;
-  type: EJobType;
+  type: {
+    value: EJobTypeValue;
+    label: string;
+  };
 }
 
 defineProps<Props>();

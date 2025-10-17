@@ -3,16 +3,19 @@ export interface IJob {
   title: string;
   company: string;
   location: string;
-  type: EJobType;
+  type: {
+    value: EJobTypeValue,
+    label: string,
+  };
   description: string;
   applyLink: string;
 }
 
-export enum EJobType {
-  FULL_TIME = 'Full-time',
-  PART_TIME = 'Part-time',
-  CONTRACT = 'Contract',
-  HYBRID = 'Hybrid',
-  REMOTE = 'Remote',
-  ON_SITE = 'On-site',
+export enum EJobTypeValue {
+  FULL_TIME = 'full-time',
+  PART_TIME = 'part-time',
+  CONTRACT = 'contract',
+  HYBRID = 'hybrid',
+  REMOTE = 'remote',
+  ON_SITE = 'on-site',
 }

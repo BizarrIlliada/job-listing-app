@@ -8,6 +8,7 @@ export default {
   // D
 
   // E
+  error: 'Error',
 
   // F
 
@@ -39,6 +40,7 @@ export default {
   // S
 
   // T
+  toHomePage: 'To home page',
 
   // U
 

@@ -28,22 +28,36 @@
 import JobCardComponent from '@/components/JobCardComponent.vue';
 import UiLoader from '@/components/ui/UiLoader.vue';
 
-import { onMounted, ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 import { useJobsApi } from '@/api/jobs.api';
 import type { IJob } from '@/types';
+
+const router = useRouter();
+
+const { locale } = useI18n();
 
 const { getJobs } = useJobsApi();
 
 const jobs = ref<IJob[] | null>(null);
 const areJobsLoaded = ref(false);
 
-onMounted(async () => {
+async function loadJobs() {
+  areJobsLoaded.value = false;
+
   try {
     jobs.value = await getJobs();
     areJobsLoaded.value = true;
-  } catch (error) {}
-});
+  } catch (error) {
+    router.push({ name: 'error-page' });
+  }
+}
+
+watch(locale, () => {
+  loadJobs();
+}, { immediate: true });
 </script>
 
 <style lang="scss">
@@ -66,6 +80,12 @@ onMounted(async () => {
 
     &__job {
       height: 100%;
+      transition: transform .3s ease;
+      box-shadow: var(--block-outer-shadow);
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 </style>

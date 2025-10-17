@@ -8,6 +8,7 @@ export default {
   // D
 
   // E
+  error: 'Ой, халепа',
 
   // F
 
@@ -39,6 +40,7 @@ export default {
   // S
 
   // T
+  toHomePage: 'На головну сторінку',
 
   // U
 
