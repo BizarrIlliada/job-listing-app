@@ -15,6 +15,12 @@ A single-page job listing application with filters, localization, and mocked API
 
 ---
 
+## ⏱️ Development Time
+
+Approx. **8–10 hours** of total development time.
+
+---
+
 ## 🏃‍♂️ Run Locally
 
 To run the project locally, follow these steps:

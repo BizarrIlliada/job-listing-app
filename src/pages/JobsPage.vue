@@ -63,7 +63,6 @@ import { useDebounceFn } from '@vueuse/core';
 import { EJobTypeValue } from '@/types';
 import UiInput from '@/components/ui/UiInput.vue';
 import { useJobsStore } from '@/store/jobsStore';
-import jobs from '@/i18n/en/jobs';
 
 const router = useRouter();
 const { t, locale } = useI18n();
