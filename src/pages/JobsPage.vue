@@ -6,7 +6,7 @@
         v-model:isOpen="isJobTypeFilterOpen"
         :name="t('jobs.jobType')"
         :dropdownOptions="jobTypeFilterOptions"
-        :disabled="!areJobsLoaded"
+        :disabled="!jobsStore.areJobsLoaded"
         @onSelectAll="jobsStore.selectAllFilters"
       />
 
@@ -17,7 +17,7 @@
     </div>
 
     <div
-      v-if="areJobsLoaded && jobsStore.jobs?.length"
+      v-if="jobsStore.areJobsLoaded && jobsStore.jobs?.length"
       class="jobs-page__jobs"
     >
       <RouterLink
@@ -40,7 +40,7 @@
     </div>
 
     <p
-      v-else-if="areJobsLoaded && !jobsStore.jobs?.length"
+      v-else-if="jobsStore.areJobsLoaded && !jobsStore.jobs?.length"
       class="jobs-page__empty-placeholder"
     >
       {{ t('jobs.emptyPlaceholder') }}
@@ -56,19 +56,15 @@ import UiMultiselectDropdown from '@/components/ui/UiMultiselectDropdown.vue';
 import UiLoader from '@/components/ui/UiLoader.vue';
 
 import { computed, onMounted, ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { useDebounceFn } from '@vueuse/core';
 
 import { EJobTypeValue } from '@/types';
 import UiInput from '@/components/ui/UiInput.vue';
 import { useJobsStore } from '@/store/jobsStore';
 
-const router = useRouter();
-const { t, locale } = useI18n();
+const { t } = useI18n();
 const jobsStore = useJobsStore();
 
-const areJobsLoaded = ref(jobsStore.jobs !== null);
 const isJobTypeFilterOpen = ref(false);
 const jobTypeFilterOptions = computed(() => [
   { label: t('jobs.filters.contract'), value: EJobTypeValue.CONTRACT },
@@ -79,33 +75,17 @@ const jobTypeFilterOptions = computed(() => [
   { label: t('jobs.filters.remote'), value: EJobTypeValue.REMOTE },
 ]);
 
-async function loadJobs() {
-  areJobsLoaded.value = false;
-  isJobTypeFilterOpen.value = false;
-
-  try {
-    await jobsStore.loadJobs();
-    areJobsLoaded.value = true;
-  } catch (error) {
-    router.push({ name: 'error-page' });
-  }
-}
-
-const loadJobsDebounced = useDebounceFn(loadJobs, 800);
-
 onMounted(() => {
-  if (!areJobsLoaded.value) {
-    loadJobs();
+  if (!jobsStore.areJobsLoaded) {
+    jobsStore.loadJobs();
   }
 });
 
-watch([
-    () => jobsStore.jobTypeFilterSelectedOptions,
-    () => jobsStore.jobSearchQuery,
-  ], loadJobsDebounced,
-);
-
-watch(locale, loadJobs);
+watch(() => jobsStore.areJobsLoaded, (newVal) => {
+  if (!newVal) {
+    isJobTypeFilterOpen.value = false;
+  }
+});
 </script>
 
 <style lang="scss">

@@ -1,9 +1,15 @@
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { defineStore } from 'pinia';
+import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+import { useDebounceFn } from '@vueuse/core';
 import { EJobTypeValue, type IDropdownOption, type IJob } from '@/types';
 import { useJobsApi } from '@/api/jobs.api';
 
 export const useJobsStore = defineStore('jobsStore', () => {
+  const router = useRouter();
+  const { locale } = useI18n();
+
   // FIlters
   const jobTypeFilterSelectedOptions = ref<IDropdownOption<EJobTypeValue>[]>([]);
   const jobTypeFilterSelectedValues = computed(() => jobTypeFilterSelectedOptions.value.map(o => o.value));
@@ -17,6 +23,7 @@ export const useJobsStore = defineStore('jobsStore', () => {
   const { getJobs } = useJobsApi();
 
   const jobs = ref<IJob[] | null>(null);
+  const areJobsLoaded = ref(false);
   const visitedJobsIds = ref<Set<number>>(new Set());
   const selectedJobsIds = ref<Set<number>>(new Set());
 
@@ -30,11 +37,23 @@ export const useJobsStore = defineStore('jobsStore', () => {
 
   async function loadJobs() {
     try {
+      areJobsLoaded.value = false;
       jobs.value = await getJobs(jobTypeFilterSelectedValues.value, jobSearchQuery.value);
+      areJobsLoaded.value = true;
     } catch (error) {
-      return Promise.reject(error);
+      router.push({ name: 'error-page' });
     }
   }
+
+  const loadJobsDebounced = useDebounceFn(loadJobs, 800);
+
+  watch([
+      jobTypeFilterSelectedOptions,
+      jobSearchQuery,
+    ], loadJobsDebounced,
+  );
+
+  watch(locale, loadJobs);
 
   return {
     jobTypeFilterSelectedOptions,
@@ -42,6 +61,7 @@ export const useJobsStore = defineStore('jobsStore', () => {
     selectAllFilters,
 
     jobs,
+    areJobsLoaded,
     visitedJobsIds,
     selectedJobsIds,
     toggleSelectedItem,
