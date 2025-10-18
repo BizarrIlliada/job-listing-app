@@ -27,9 +27,13 @@ const { t } = useI18n();
 
   &__title {
     transition: transform .3s ease;
+    
+    @include phone {
+      font-size: 24px;
+    }
 
     &:hover {
-      transform: scale(1.01);
+      transform: scale(1.02);
     }
   }
 }

@@ -52,12 +52,17 @@ defineProps<Props>();
 
   &__title {
     font-size: 24px;
+    margin-block-end: auto;
   }
 
   &__description {
-    flex-grow: 1;
     font-size: 20px;
     margin-block-end: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* кількість рядків */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__footer {

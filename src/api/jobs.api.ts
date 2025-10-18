@@ -1,4 +1,4 @@
-import type { IJob } from '@/types';
+import type { EJobTypeValue, IJob } from '@/types';
 import { useI18n } from 'vue-i18n';
 
 export function useJobsApi() {
@@ -10,12 +10,28 @@ export function useJobsApi() {
     return jobs as IJob[];
   }
 
-  async function getJobs(): Promise<IJob[]> {
+  async function getJobs(
+    selectedFiltersValues: EJobTypeValue[],
+    searchQuery: string,
+  ): Promise<IJob[]> {
     const jobs = await loadJson();
+    const filteredByTypeJobs = selectedFiltersValues.length > 0
+      ? jobs.filter(j => selectedFiltersValues.includes(j.type.value))
+      : jobs;
 
-    await new Promise(resolve => setTimeout(resolve, 500));
+    const query = searchQuery.trim().toLowerCase();
 
-    return jobs;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    if (!query) {
+      return filteredByTypeJobs;
+    }
+
+    return filteredByTypeJobs.filter(j =>
+      j.location.toLowerCase().includes(query) ||
+      j.title.toLowerCase().includes(query) ||
+      j.company.toLowerCase().includes(query)
+    );
   }
 
   async function getJobById(id: number): Promise<IJob> {

@@ -2,7 +2,15 @@
   flex-grow: 1;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 0 42px;
+  padding-inline: 42px;
   overflow-x: clip;
   overflow-y: visible;
+
+  @include tablet {
+    padding-inline: 32px;
+  }
+
+  @include phone {
+    padding-inline: 20px;
+  }
 }

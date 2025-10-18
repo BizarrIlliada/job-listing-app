@@ -1,5 +1,6 @@
 export default {
   // A
+  allValues: 'All filters',
 
   // B
 
