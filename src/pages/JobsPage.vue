@@ -7,7 +7,6 @@
         :name="t('jobsPage.jobType')"
         :dropdownOptions="jobTypeFilterOptions"
         :disabled="!areJobsLoaded"
-        @click="isJobTypeFilterOpen = !isJobTypeFilterOpen"
         @onSelectAll="jobsStore.selectAllFilters"
       />
 
@@ -33,6 +32,9 @@
           :description="job.description"
           :location="job.location"
           :type="job.type"
+          :visited="jobsStore.visitedJobsIds.has(job.id)"
+          :selected="jobsStore.selectedJobsIds.has(job.id)"
+          @onSelect="selectJob(job.id)"
         />
       </RouterLink>
     </div>
@@ -53,9 +55,10 @@ import JobCardComponent from '@/components/JobCardComponent.vue';
 import UiMultiselectDropdown from '@/components/ui/UiMultiselectDropdown.vue';
 import UiLoader from '@/components/ui/UiLoader.vue';
 
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import { useDebounceFn } from '@vueuse/core';
 
 import { EJobTypeValue } from '@/types';
 import UiInput from '@/components/ui/UiInput.vue';
@@ -76,22 +79,41 @@ const jobTypeFilterOptions = computed(() => [
   { label: t('jobsPage.filters.remote'), value: EJobTypeValue.REMOTE },
 ]);
 
+async function loadJobs() {
+  areJobsLoaded.value = false;
+  isJobTypeFilterOpen.value = false;
+
+  try {
+    await jobsStore.loadJobs();
+    areJobsLoaded.value = true;
+  } catch (error) {
+    router.push({ name: 'error-page' });
+  }
+}
+
+const loadJobsDebounced = useDebounceFn(loadJobs, 800);
+
+function selectJob(id: number) {
+  if (jobsStore.selectedJobsIds.has(id)) {
+    jobsStore.selectedJobsIds.delete(id);
+  } else {
+    jobsStore.selectedJobsIds.add(id);
+  }
+}
+
+onMounted(() => {
+  if (!areJobsLoaded.value) {
+    loadJobs();
+  }
+});
+
 watch([
-    locale,
     () => jobsStore.jobTypeFilterSelectedOptions,
     () => jobsStore.jobSearchQuery,
-  ],
-  async () => {
-    areJobsLoaded.value = false;
-    isJobTypeFilterOpen.value = false;
+  ], loadJobsDebounced,
+);
 
-    try {
-      await jobsStore.loadJobs();
-      areJobsLoaded.value = true;
-    } catch (error) {
-      router.push({ name: 'error-page' });
-    }
-}, { immediate: true });
+watch(locale, loadJobs);
 </script>
 
 <style lang="scss">
@@ -120,7 +142,6 @@ watch([
 
     &__job {
       height: 100%;
-      transition: transform .3s ease;
       box-shadow: var(--block-outer-shadow);
 
       &:hover {

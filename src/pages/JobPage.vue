@@ -7,26 +7,31 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import UiLoader from '@/components/ui/UiLoader.vue';
+import { onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
-import { useJobsApi } from '@/api/jobs.api';
 import type { IJob } from '@/types';
-import UiLoader from '@/components/ui/UiLoader.vue';
+import { useJobsStore } from '@/store/jobsStore';
+import { useJobsApi } from '@/api/jobs.api';
 
 const route = useRoute();
 const router = useRouter();
-
 const { locale } = useI18n();
 
+const jobsStore = useJobsStore();
 const { getJobById } = useJobsApi();
 
 const job = ref<IJob | null>(null);
 
-async function loadJob() {
+async function initJob() {
   job.value = null;
   const jobId = Number(route.params.id);
+
+  if (!jobsStore.visitedJobsIds.has(jobId)) {
+    jobsStore.visitedJobsIds.add(jobId);
+  }
 
   try {
     job.value = await getJobById(jobId);
@@ -36,7 +41,7 @@ async function loadJob() {
 }
 
 watch(locale, () => {
-  loadJob();
+  initJob();
 }, { immediate: true });
 </script>
 

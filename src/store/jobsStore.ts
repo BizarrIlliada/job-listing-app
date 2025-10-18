@@ -13,10 +13,12 @@ export const useJobsStore = defineStore('jobsStore', () => {
     jobTypeFilterSelectedOptions.value = [];
   }
 
-  // JOBS
+  // Jobs
   const { getJobs } = useJobsApi();
 
   const jobs = ref<IJob[] | null>(null);
+  const visitedJobsIds = ref<Set<number>>(new Set());
+  const selectedJobsIds = ref<Set<number>>(new Set());
 
   async function loadJobs() {
     try {
@@ -32,6 +34,8 @@ export const useJobsStore = defineStore('jobsStore', () => {
     selectAllFilters,
 
     jobs,
+    visitedJobsIds,
+    selectedJobsIds,
     loadJobs,
   }
 });

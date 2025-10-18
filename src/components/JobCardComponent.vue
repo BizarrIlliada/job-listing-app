@@ -1,5 +1,5 @@
 <template>
-  <div class="job-card">
+  <div class="job-card" :class="{ 'job-card--visited': visited, 'job-card--selected': selected }">
     <h3 class="job-card__title">
       {{ t('jobsPage.jobAtCompany', { jobTitle: title, companyName: company }) }}
     </h3>
@@ -9,20 +9,31 @@
     </p>
 
     <div class="job-card__footer">
-      <span class="job-card__location">
-        {{ location }}
-      </span>
-      <br>
-      <span class="job-card__type">
-        {{ type.label }}
-      </span>
+      <div class="job-card__footer-info">
+        <span class="job-card__location">
+          {{ location }}
+        </span>
+        <br>
+        <span class="job-card__type">
+          {{ type.label }}
+        </span>
+      </div>
+
+      <button
+        class="job-card__select-button"
+        :class="{ 'job-card__select-button--selected': selected }"
+        @click.prevent="onSelect"
+      >
+        <IconRatingStar />
+      </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import IconRatingStar from './icons/IconRatingStar.vue';
 import { useI18n } from 'vue-i18n';
-import type { EJobTypeValue, IJob } from '@/types';
+import type { EJobTypeValue } from '@/types';
 
 const { t } = useI18n();
 
@@ -35,9 +46,17 @@ interface Props {
     value: EJobTypeValue;
     label: string;
   };
+  visited?: boolean;
+  selected?: boolean;
 }
 
 defineProps<Props>();
+
+const emit = defineEmits(['onSelect']);
+
+function onSelect() {
+  emit('onSelect');
+}
 </script>
 
 <style lang="scss">
@@ -49,6 +68,15 @@ defineProps<Props>();
   padding-block: 12px;
   padding-inline: 16px;
   border-radius: 4px;
+  transition: background-color .3s ease, transform .3s ease;
+
+  &--visited {
+    background-color: var(--green-10);
+  }
+
+  &--selected {
+    background-color: var(--yellow-10);
+  }
 
   &__title {
     font-size: 24px;
@@ -66,12 +94,27 @@ defineProps<Props>();
   }
 
   &__footer {
+    display: flex;
+    justify-content: space-between;
     padding-block-start: 8px;
     border-block-start: 1px solid var(--gray-100);
   }
 
   &__location, &__type {
     color: var(--gray-75);
+  }
+
+  &__select-button {
+    padding-inline: 6px;
+    background-color: transparent;
+    border: 1px solid var(--gray-100);
+    border-radius: 4px;
+    transition: background-color .3s ease;
+    cursor: pointer;
+
+    &:hover, &--selected {
+      background-color: var(--yellow-75);
+    }
   }
 }
 </style>

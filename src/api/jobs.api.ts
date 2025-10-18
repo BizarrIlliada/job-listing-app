@@ -23,6 +23,8 @@ export function useJobsApi() {
 
     await new Promise(resolve => setTimeout(resolve, 1000));
 
+    console.log('[FETCH JOBS]');
+
     if (!query) {
       return filteredByTypeJobs;
     }

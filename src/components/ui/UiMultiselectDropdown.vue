@@ -6,7 +6,9 @@
         'ui-dropdown__head--opened': isOpen,
         'ui-dropdown__head--disabled': disabled,
         'ui-dropdown__head--with-selected': modelValue.length > 0,
-      }">
+      }"
+      @click="emit('update:isOpen', !isOpen)"
+    >
       <span class="ui-dropdown__name">
         {{ name }}
       </span>
