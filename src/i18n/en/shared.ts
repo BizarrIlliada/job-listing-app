@@ -3,6 +3,7 @@ export default {
   allValues: 'All filters',
 
   // B
+  backToList: 'Back to list',
 
   // C
 

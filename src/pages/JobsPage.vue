@@ -4,14 +4,14 @@
       <UiMultiselectDropdown
         v-model="jobsStore.jobTypeFilterSelectedOptions"
         v-model:isOpen="isJobTypeFilterOpen"
-        :name="t('jobsPage.jobType')"
+        :name="t('jobs.jobType')"
         :dropdownOptions="jobTypeFilterOptions"
         :disabled="!areJobsLoaded"
         @onSelectAll="jobsStore.selectAllFilters"
       />
 
       <UiInput
-        :placeholder="t('jobsPage.inputPlaceholder')"
+        :placeholder="t('jobs.inputPlaceholder')"
         v-model="jobsStore.jobSearchQuery"
       />
     </div>
@@ -34,7 +34,7 @@
           :type="job.type"
           :visited="jobsStore.visitedJobsIds.has(job.id)"
           :selected="jobsStore.selectedJobsIds.has(job.id)"
-          @onSelect="selectJob(job.id)"
+          @onSelect="jobsStore.toggleSelectedItem(job.id)"
         />
       </RouterLink>
     </div>
@@ -43,7 +43,7 @@
       v-else-if="areJobsLoaded && !jobsStore.jobs?.length"
       class="jobs-page__empty-placeholder"
     >
-      {{ t('jobsPage.emptyPlaceholder') }}
+      {{ t('jobs.emptyPlaceholder') }}
     </p>
 
     <UiLoader v-else />
@@ -63,6 +63,7 @@ import { useDebounceFn } from '@vueuse/core';
 import { EJobTypeValue } from '@/types';
 import UiInput from '@/components/ui/UiInput.vue';
 import { useJobsStore } from '@/store/jobsStore';
+import jobs from '@/i18n/en/jobs';
 
 const router = useRouter();
 const { t, locale } = useI18n();
@@ -71,12 +72,12 @@ const jobsStore = useJobsStore();
 const areJobsLoaded = ref(jobsStore.jobs !== null);
 const isJobTypeFilterOpen = ref(false);
 const jobTypeFilterOptions = computed(() => [
-  { label: t('jobsPage.filters.contract'), value: EJobTypeValue.CONTRACT },
-  { label: t('jobsPage.filters.fullTime'), value: EJobTypeValue.FULL_TIME },
-  { label: t('jobsPage.filters.hybrid'), value: EJobTypeValue.HYBRID },
-  { label: t('jobsPage.filters.onSite'), value: EJobTypeValue.ON_SITE },
-  { label: t('jobsPage.filters.partTime'), value: EJobTypeValue.PART_TIME },
-  { label: t('jobsPage.filters.remote'), value: EJobTypeValue.REMOTE },
+  { label: t('jobs.filters.contract'), value: EJobTypeValue.CONTRACT },
+  { label: t('jobs.filters.fullTime'), value: EJobTypeValue.FULL_TIME },
+  { label: t('jobs.filters.hybrid'), value: EJobTypeValue.HYBRID },
+  { label: t('jobs.filters.onSite'), value: EJobTypeValue.ON_SITE },
+  { label: t('jobs.filters.partTime'), value: EJobTypeValue.PART_TIME },
+  { label: t('jobs.filters.remote'), value: EJobTypeValue.REMOTE },
 ]);
 
 async function loadJobs() {
@@ -92,14 +93,6 @@ async function loadJobs() {
 }
 
 const loadJobsDebounced = useDebounceFn(loadJobs, 800);
-
-function selectJob(id: number) {
-  if (jobsStore.selectedJobsIds.has(id)) {
-    jobsStore.selectedJobsIds.delete(id);
-  } else {
-    jobsStore.selectedJobsIds.add(id);
-  }
-}
 
 onMounted(() => {
   if (!areJobsLoaded.value) {

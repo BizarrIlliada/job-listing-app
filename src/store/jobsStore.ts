@@ -20,6 +20,14 @@ export const useJobsStore = defineStore('jobsStore', () => {
   const visitedJobsIds = ref<Set<number>>(new Set());
   const selectedJobsIds = ref<Set<number>>(new Set());
 
+  function toggleSelectedItem(id: number) {
+    if (selectedJobsIds.value.has(id)) {
+      selectedJobsIds.value.delete(id);
+    } else {
+      selectedJobsIds.value.add(id);
+    }
+  }
+
   async function loadJobs() {
     try {
       jobs.value = await getJobs(jobTypeFilterSelectedValues.value, jobSearchQuery.value);
@@ -36,6 +44,7 @@ export const useJobsStore = defineStore('jobsStore', () => {
     jobs,
     visitedJobsIds,
     selectedJobsIds,
+    toggleSelectedItem,
     loadJobs,
   }
 });

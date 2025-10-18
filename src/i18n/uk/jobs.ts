@@ -1,9 +1,12 @@
 export default {
   // A
+  addToSelected: 'Додати до обраних',
+  applyHere: 'Податись тут',
 
   // B
 
   // C
+  companyName: 'Компанія: { companyName }',
 
   // D
 
@@ -29,11 +32,13 @@ export default {
 
   // J
   jobAtCompany: '{ jobTitle } в компанії { companyName }',
+  jobTitle: 'Назва позиції: { jobTitle }',
   jobType: 'Тип зайнятості',
 
   // K
 
   // L
+  location: 'Локація: { location }',
 
   // M
 
@@ -46,6 +51,7 @@ export default {
   // Q
 
   // R
+  removeFromSelected: 'Видалити з обраних',
 
   // S
 

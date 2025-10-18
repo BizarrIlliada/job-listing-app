@@ -3,6 +3,7 @@ export default {
   allValues: 'Всі значення',
 
   // B
+  backToList: 'Назад до списку',
 
   // C
 

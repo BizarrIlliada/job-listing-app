@@ -1,4 +1,4 @@
-import jobsPage from './jobs-page';
+import jobs from './jobs';
 import shared from './shared';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   // I
 
   // J
-  jobsPage,
+  jobs,
 
   // K
 

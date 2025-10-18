@@ -1,7 +1,7 @@
 <template>
   <div class="job-card" :class="{ 'job-card--visited': visited, 'job-card--selected': selected }">
     <h3 class="job-card__title">
-      {{ t('jobsPage.jobAtCompany', { jobTitle: title, companyName: company }) }}
+      {{ t('jobs.jobAtCompany', { jobTitle: title, companyName: company }) }}
     </h3>
 
     <p class="job-card__description">
@@ -87,7 +87,7 @@ function onSelect() {
     font-size: 20px;
     margin-block-end: 24px;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* кількість рядків */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

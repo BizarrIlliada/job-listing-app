@@ -1,9 +1,12 @@
 export default {
   // A
+  addToSelected: 'Add to selected',
+  applyHere: 'Apply here',
 
   // B
 
   // C
+  companyName: 'Company: { companyName }',
 
   // D
 
@@ -29,11 +32,13 @@ export default {
 
   // J
   jobAtCompany: '{ jobTitle } at { companyName }',
+  jobTitle: 'Job title: { jobTitle }',
   jobType: 'Job type',
 
   // K
 
   // L
+  location: 'Location: { location }',
 
   // M
 
@@ -46,6 +51,7 @@ export default {
   // Q
 
   // R
+  removeFromSelected: 'Remove from selected',
 
   // S
 
